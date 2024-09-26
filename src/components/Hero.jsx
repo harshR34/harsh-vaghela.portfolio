@@ -12,7 +12,8 @@ const container = (delay) => ({
     }
 })
 
-const Hero = () => {
+// eslint-disable-next-line react/prop-types
+const Hero = ({checked}) => {
     return (
         <div className="border-b border-neutral-900 pb-4 lg:mb-35">
             <div className="flex flex-wrap">
@@ -46,22 +47,19 @@ const Hero = () => {
                         </a> */}
                         <div className="flex flex-row">
                             <a href='/Harsh Vaghela resume 2024.pdf' download>
-                                <button className="relative z-10 px-6 py-4 text-lg font-bold text-gray-800 bg-gray-200 border-2 border-transparent rounded-full shadow-lg transition-all duration-300 group overflow-hidden hover:text-white hover:border-pink-300 hover:shadow-[0_0_15px_4px_rgba(255,20,147,0.6)] mb-4">
+                                <button className={`relative z-10 px-4 py-2 text-lg font-semibold border-transparent transition-all duration-300 group overflow-hidden  hover:border-pink-300 hover:shadow-[0_0_15px_4px_rgba(255,20,147,0.6)] mb-4 ${checked ? 'text-gray-900 hover:text-white' : 'text-gray-200 hover:text-black'}`}>
                                     Résumé
-                                    <span className="absolute inset-0 w-0 h-full transition-all duration-300 bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 rounded-xl group-hover:w-full z-[-1]"></span>
+                                    <span className={`absolute inset-0 w-0 h-full transition-all duration-300 ${checked ? 'bg-black':'bg-slate-200'}  group-hover:w-full z-[-1]`}></span>
                                 </button>
                             </a>
                             <a
                                 href="https://forms.gle/3L4KtH5eXxZWuXHMA"
                                 target="_blank"
-                                className="flex mt-5 mx-7 hover:gap-2 transition-all ease-in-out duration-500"
+                                className="flex mt-3 mx-5 hover:gap-2 transition-all ease-in-out duration-500 font-semibold"
                             >
                                 Your Massage
                                 <FaAngleRight className="mt-1.5 text-neutral-500 hover:translate-x-1.5 transition-all ease-in-out duration-500" />
                             </a>
-
-
-
                         </div>
                         {/* <span className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent">Python Analyst</span> */}
                     </div>
