@@ -1,4 +1,4 @@
-import { EXPERIENCES } from "../constants"
+// import { EXPERIENCES } from "../constants"
 import {motion} from 'framer-motion';
 const Experience = () => {
   return (
@@ -8,7 +8,7 @@ const Experience = () => {
       initial={{opacity:0,y:-100}}
       transition={{duration:1.5}}
       className="my-20 text-center text-4xl">Experience</motion.h1>
-      <div>
+      {/* <div>
         {EXPERIENCES.map((experience, index) => (
           <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
             <motion.div 
@@ -34,7 +34,15 @@ const Experience = () => {
             </motion.div>
           </div>
         ))}
-      </div>
+      </div> */}
+
+      <motion.div 
+      whileInView={{opacity:1,x:0}}
+      initial={{opacity:0,x:-100}}
+      transition={{duration:1}}
+      className='text-center'>
+        <p className="mb-4 text-neutral-400">As a passionate and self-driven developer, I have gained a strong foundation in programming through hands-on projects, self-learning, and contributing to open-source initiatives. While I have no formal work experience, I have built full-stack applications and collaborated with peers, demonstrating my ability to adapt quickly and solve complex problems. My focus on delivering high-quality code, combined with a drive for continuous learning, makes me eager to bring my skills and creativity to a team that values innovation and growth.</p>
+      </motion.div>
     </div>
   )
 }
