@@ -46,22 +46,11 @@
 
 // export default Navbar;
 import { FaLinkedin, FaGithub, FaInstagram, FaSnapchatGhost } from 'react-icons/fa';
-import { MdDashboard } from "react-icons/md";
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Dashboard from './Dashboard';
-import { useState } from 'react';
 
 
 // eslint-disable-next-line react/prop-types
 const Navbar = ({ checked, setChecked }) => {
-    const [showDashboard, setShowDashboard] = useState(false); // State to toggle dashboard visibility
-
-    const toggleDashboard = () => {
-        setShowDashboard((prevShowDashboard) => !prevShowDashboard); // Toggle dashboard visibility
-    };
-
     return (
-        <Router>
             <div>
                 <nav className="mb-20 flex items-center justify-between py-6">
                     <div className="flex flex-shrink-0 items-center">
@@ -72,9 +61,6 @@ const Navbar = ({ checked, setChecked }) => {
                         <a href='https://github.com/harshR34' target='_blank' rel="noreferrer"><FaGithub /></a>
                         <a href='https://www.linkedin.com/in/harsh-vaghela-82a801279' target='_blank' rel="noreferrer"><FaLinkedin /></a>
                         <a href='https://www.snapchat.com/add/hrsh_289?share_id=-0t00lu9WFg&locale=en-IN' target='_blank' rel="noreferrer"><FaSnapchatGhost /></a>
-                        <button onClick={toggleDashboard}>
-                            <MdDashboard />
-                        </button>
                         <div className="relative w-10 h-5">
                             <label className="block w-full h-full cursor-pointer">
                                 <input
@@ -94,14 +80,6 @@ const Navbar = ({ checked, setChecked }) => {
                     </div>
                 </nav>
             </div>
-            
-            {/* Render Dashboard only when showDashboard is true */}
-            {showDashboard && (
-                <Routes>
-                    <Route path='/dashboard' element={<Dashboard />} />
-                </Routes>
-            )}
-        </Router>
     );
 }
 
