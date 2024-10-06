@@ -12,6 +12,12 @@ const container = (delay) => ({
     }
 })
 
+const handleResumeDownload = () => {
+    let downloads = localStorage.getItem("resumeDownloads") || 0;
+    downloads = parseInt(downloads, 10) + 1;
+    localStorage.setItem("resumeDownloads", downloads);
+  };
+
 // eslint-disable-next-line react/prop-types
 const Hero = ({checked}) => {
     return (
@@ -46,7 +52,7 @@ const Hero = ({checked}) => {
                             </button>
                         </a> */}
                         <div className="flex flex-row">
-                            <a href='/Harsh Vaghela resume SOFTCOPY.pdf' download>
+                            <a href='/Harsh Vaghela resume SOFTCOPY.pdf' download onClick={handleResumeDownload}>
                                 <button className={`relative z-10 px-4 py-2 text-lg font-semibold border-transparent transition-all duration-300 group overflow-hidden  hover:border-pink-300 hover:shadow-[0_0_15px_4px_rgba(255,20,147,0.6)] mb-4 ${checked ? 'text-gray-900 hover:text-white' : 'text-gray-200 hover:text-black'}`}>
                                     Résumé
                                     <span className={`absolute inset-0 w-0 h-full transition-all duration-300 ${checked ? 'bg-black':'bg-slate-200'}  group-hover:w-full z-[-1]`}></span>
