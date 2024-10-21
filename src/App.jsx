@@ -6,7 +6,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Project from "./components/Project";
 import Technologies from "./components/Technologies";
-import Dashboard from './components/Dashboard';
+// import Dashboard from './components/Dashboard';
 
 const App = () => {
   const [checked, setChecked] = useState(false);
@@ -26,7 +26,6 @@ const App = () => {
         <Experience />
         <Project />
         <Contact />
-        <Dashboard/>
       </div>
     </div>
   );
